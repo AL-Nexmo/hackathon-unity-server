@@ -1,0 +1,13 @@
+.DS_Store
+
+.idea
+!.idea/codeStyles
+!.idea/inspectionProfiles
+.gradle
+
+**/build/*
+**/out/*
+
+*.iml
+
+*.log
