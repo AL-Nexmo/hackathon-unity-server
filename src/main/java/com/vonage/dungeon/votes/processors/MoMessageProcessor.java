@@ -9,6 +9,23 @@ public class MoMessageProcessor {
 
     public VoteSummary process(MoMessage moMessage) {
         System.out.println(moMessage);
-        return new VoteSummary(VoteSummary.VoteAction.UP);
+        String text = moMessage.getText();
+
+        VoteSummary.VoteAction action = VoteSummary.VoteAction.DISCARD;
+        switch (text.toLowerCase()) {
+        case "up":
+            action = VoteSummary.VoteAction.UP;
+            break;
+        case "down":
+            action = VoteSummary.VoteAction.DOWN;
+            break;
+        case "left":
+            action = VoteSummary.VoteAction.LEFT;
+            break;
+        case "right":
+            action = VoteSummary.VoteAction.RIGHT;
+            break;
+        }
+        return new VoteSummary(action);
     }
 }
