@@ -6,10 +6,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 @Component
 public final class Counters {
-    public static AtomicInteger up;
-    public static AtomicInteger down;
-    public static AtomicInteger left;
-    public static AtomicInteger right;
+    public static AtomicInteger up = new AtomicInteger();
+    public static AtomicInteger down = new AtomicInteger();
+    public static AtomicInteger left = new AtomicInteger();
+    public static AtomicInteger right = new AtomicInteger();
 
     public void storeVote(VoteSummary voteSummary) {
 
