@@ -25,7 +25,7 @@ public class MoMessagesController {
     }
 
     @PostMapping("/mo-messages")
-    public ResponseEntity<String> postVotesSummary(@RequestBody MoMessage moMessage) {
+    public ResponseEntity<String> postMoMessage(@RequestBody MoMessage moMessage) {
         return processMo(moMessage);
     }
 
