@@ -22,7 +22,10 @@ public class WhatsappMoMessageProcessor {
             case "right":
                 action = VoteSummary.VoteAction.RIGHT;
                 break;
+            default:
+                action = VoteSummary.VoteAction.DISCARD;
         }
+
         return new VoteSummary(action);
     }
 }

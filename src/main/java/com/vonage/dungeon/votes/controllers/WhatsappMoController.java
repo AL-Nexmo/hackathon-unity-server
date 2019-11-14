@@ -9,6 +9,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -27,7 +28,7 @@ public class WhatsappMoController {
     }
 
     @PostMapping("/whatsapp-mo-messages")
-    public ResponseEntity<VotesSummary> postWhatsappMoMessage(String whatsappMoMessageJson) {
+    public ResponseEntity<VotesSummary> postWhatsappMoMessage(@RequestBody String whatsappMoMessageJson) {
         System.out.println("got whatsapp mo: " + whatsappMoMessageJson);
         String text = getTextFromWhatsappMoJson(whatsappMoMessageJson);
         System.out.println("got text from whatsapp mo: " + text);
