@@ -1,9 +1,9 @@
 package com.vonage.dungeon.votes.controllers;
 
+import com.vonage.dungeon.votes.domain.Counters;
 import com.vonage.dungeon.votes.domain.MoMessage;
 import com.vonage.dungeon.votes.domain.VoteSummary;
 import com.vonage.dungeon.votes.processors.MoMessageProcessor;
-import com.vonage.dungeon.votes.websockets.WebSocketController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class MoMessagesController {
 
     private final MoMessageProcessor moMessageProcessor;
-    private final WebSocketController votesWebSocket;
+    private final Counters votesRepository;
 
     @Autowired
-    public MoMessagesController(MoMessageProcessor moMessageProcessor, WebSocketController votesWebsocket) {
+    public MoMessagesController(MoMessageProcessor moMessageProcessor, Counters votesRepository) {
         this.moMessageProcessor = moMessageProcessor;
-        this.votesWebSocket = votesWebsocket;
+        this.votesRepository = votesRepository;
     }
 
     @PostMapping("/mo-messages")
@@ -31,7 +31,7 @@ public class MoMessagesController {
 
     private ResponseEntity<String> processMo(MoMessage moMessage) {
         VoteSummary voteSummary = moMessageProcessor.process(moMessage);
-        votesWebSocket.sendMessage(voteSummary);
+        votesRepository.storeVote(voteSummary);
         return ResponseEntity.ok().build();
     }
 

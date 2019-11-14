@@ -11,7 +11,7 @@ public class MoMessageProcessor {
         System.out.println(moMessage);
         String text = moMessage.getText();
 
-        VoteSummary.VoteAction action = VoteSummary.VoteAction.DISCARD;
+        VoteSummary.VoteAction action = null;
         switch (text.toLowerCase()) {
         case "up":
             action = VoteSummary.VoteAction.UP;
