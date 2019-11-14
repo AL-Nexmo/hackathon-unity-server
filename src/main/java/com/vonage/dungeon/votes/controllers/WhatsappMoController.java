@@ -39,6 +39,12 @@ public class WhatsappMoController {
         return ResponseEntity.ok().build();
     }
 
+    @PostMapping("/message-status")
+    public ResponseEntity<String> returnOkForMessageStatus(@RequestBody String body) {
+        System.out.println("something called message status with body: " + body);
+        return ResponseEntity.ok().build();
+    }
+
     private String getTextFromWhatsappMoJson(String whatsappMoMessageJson) {
 
         JSONObject whatsappMoMessageJsonObject = new JSONObject(whatsappMoMessageJson);
