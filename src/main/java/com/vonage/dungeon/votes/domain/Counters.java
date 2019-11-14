@@ -16,14 +16,23 @@ public final class Counters {
         switch (voteSummary.getAction()) {
             case UP:
                 up.incrementAndGet();
+                break;
             case DOWN:
                 down.incrementAndGet();
+                break;
+
             case LEFT:
                 left.incrementAndGet();
+                break;
+
             case RIGHT:
                 right.incrementAndGet();
+                break;
+
             default:
                 System.out.println("Discarded message");
+                break;
+
         }
     }
 

@@ -13,18 +13,18 @@ public class MoMessageProcessor {
 
         VoteSummary.VoteAction action = null;
         switch (text.toLowerCase()) {
-        case "up":
-            action = VoteSummary.VoteAction.UP;
-            break;
-        case "down":
-            action = VoteSummary.VoteAction.DOWN;
-            break;
-        case "left":
-            action = VoteSummary.VoteAction.LEFT;
-            break;
-        case "right":
-            action = VoteSummary.VoteAction.RIGHT;
-            break;
+            case "up":
+                action = VoteSummary.VoteAction.UP;
+                break;
+            case "down":
+                action = VoteSummary.VoteAction.DOWN;
+                break;
+            case "left":
+                action = VoteSummary.VoteAction.LEFT;
+                break;
+            case "right":
+                action = VoteSummary.VoteAction.RIGHT;
+                break;
         }
         return new VoteSummary(action);
     }
