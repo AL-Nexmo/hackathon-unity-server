@@ -1,5 +1,8 @@
 package com.vonage.dungeon.votes.domain;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class MoMessage {
 
     private String type;
@@ -12,7 +15,16 @@ public class MoMessage {
     private String text;
     private String keyword;
 
-    public MoMessage(String type, String to, String msisdn, String messageId, String messageTimestamp, String timestamp, String nonce, String text, String keyword) {
+    @JsonCreator
+    public MoMessage(@JsonProperty("type") String type,
+                     @JsonProperty("to") String to,
+                     @JsonProperty("msisdn") String msisdn,
+                     @JsonProperty("messageId") String messageId,
+                     @JsonProperty("message-timestamp") String messageTimestamp,
+                     @JsonProperty("timestamp") String timestamp,
+                     @JsonProperty("nonce") String nonce,
+                     @JsonProperty("text") String text,
+                     @JsonProperty("keyword") String keyword) {
         this.type = type;
         this.to = to;
         this.msisdn = msisdn;
