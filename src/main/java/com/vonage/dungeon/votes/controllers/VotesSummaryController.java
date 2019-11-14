@@ -19,7 +19,7 @@ public class VotesSummaryController {
         this.votesRepository = votesRepository;
     }
 
-    @GetMapping("/mo-messages")
+    @GetMapping("/votes")
     public ResponseEntity<VotesSummary> getRecentVotes() {
         return ResponseEntity.ok().body(votesRepository.getVotesSummary());
     }
