@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class WebSocketController {
 
-    @SendTo("/topic/greetings")
+    @SendTo("/socket")
     public VoteSummary sendMessage(VoteSummary message) {
         return message;
     }
