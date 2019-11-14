@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collection;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ResourceLoader;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +17,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RestController
 @RequestMapping()
 public class NccoController {
-
-    @Autowired
-    ResourceLoader resourceLoader;
 
     @PostMapping(value = "/ncco", produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<Collection> returnNcco() {
