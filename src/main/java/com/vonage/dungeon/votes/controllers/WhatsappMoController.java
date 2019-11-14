@@ -28,10 +28,12 @@ public class WhatsappMoController {
 
     @PostMapping("/whatsapp-mo-messages")
     public ResponseEntity<VotesSummary> postWhatsappMoMessage(String whatsappMoMessageJson) {
-
+        System.out.println("got whatsapp mo: " + whatsappMoMessageJson);
         String text = getTextFromWhatsappMoJson(whatsappMoMessageJson);
+        System.out.println("got text from whatsapp mo: " + text);
 
         VoteSummary voteSummary = whatsappMoMessageProcessor.process(text);
+        System.out.println("got vote summary from whatsapp mo: " + voteSummary);
         votesRepository.storeVote(voteSummary);
         return ResponseEntity.ok().build();
     }
