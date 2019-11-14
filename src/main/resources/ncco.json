@@ -1,0 +1,13 @@
+[
+  {
+    "action": "talk",
+    "text": "Please enter a digit",
+    "bargeIn": true
+  },
+  {
+    "action": "input",
+    "eventUrl": ["http://dungeon-one-hack-server.herokuapp.com/dtmf"],
+    "timeOut": 10,
+    "maxDigits": 1
+  }
+]
