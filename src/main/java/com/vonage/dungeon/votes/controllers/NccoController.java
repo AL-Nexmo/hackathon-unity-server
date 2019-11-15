@@ -15,18 +15,18 @@ public class NccoController {
     public ResponseEntity<String> returnNcco() {
 
         String blah = "[\n" +
-            "  {\n" +
-            "    \"action\": \"talk\",\n" +
-            "    \"text\": \"Please enter a digit\",\n" +
-            "    \"bargeIn\": true\n" +
-            "  },\n" +
-            "  {\n" +
-            "    \"action\": \"input\",\n" +
-            "    \"eventUrl\": [\"http://dungeon-one-hack-server.herokuapp.com/dtmf\"],\n" +
-            "    \"timeOut\": 10,\n" +
-            "    \"maxDigits\": 1\n" +
-            "  }\n" +
-            "]";
+                "  {\n" +
+                "    \"action\": \"talk\",\n" +
+                "    \"text\": \"Please enter a digit\",\n" +
+                "    \"bargeIn\": true\n" +
+                "  },\n" +
+                "  {\n" +
+                "    \"action\": \"input\",\n" +
+                "    \"eventUrl\": [\"http://dungeon-one-hack-server.herokuapp.com/dtmf\"],\n" +
+                "    \"timeOut\": 10,\n" +
+                "    \"maxDigits\": 1\n" +
+                "  }\n" +
+                "]";
 
         return ResponseEntity.ok(blah);
     }

@@ -7,7 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Dtmf {
 
-    @JsonProperty("dtmf") private String digit;
+    @JsonProperty("dtmf")
+    private String digit;
 
     public String getDigit() {
         return digit;

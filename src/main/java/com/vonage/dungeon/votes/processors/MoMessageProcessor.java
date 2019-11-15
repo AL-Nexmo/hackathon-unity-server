@@ -2,7 +2,6 @@ package com.vonage.dungeon.votes.processors;
 
 import com.vonage.dungeon.votes.domain.MoMessage;
 import com.vonage.dungeon.votes.domain.VoteSummary;
-import com.vonage.dungeon.votes.domain.VotesSummary;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -3,7 +3,6 @@ package com.vonage.dungeon.votes.controllers;
 import com.vonage.dungeon.votes.domain.Counters;
 import com.vonage.dungeon.votes.domain.VoteSummary;
 import com.vonage.dungeon.votes.domain.VotesSummary;
-import com.vonage.dungeon.votes.processors.MoMessageProcessor;
 import com.vonage.dungeon.votes.processors.WhatsappMoMessageProcessor;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
