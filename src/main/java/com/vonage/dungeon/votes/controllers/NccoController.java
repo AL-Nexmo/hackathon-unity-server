@@ -17,7 +17,7 @@ public class NccoController {
         String blah = "[\n" +
             "  {\n" +
             "    \"action\": \"talk\",\n" +
-            "    \"text\": \"Please enter a digit\",\n" +
+            "    \"text\": \"Go go go\",\n" +
             "    \"bargeIn\": true\n" +
             "  },\n" +
             "  {\n" +
