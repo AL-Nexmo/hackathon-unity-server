@@ -1,18 +1,15 @@
 package com.vonage.dungeon.votes.processors;
 
-import com.vonage.dungeon.votes.domain.MoMessage;
 import com.vonage.dungeon.votes.domain.VoteSummary;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MoMessageProcessor {
+public class WhatsappMoMessageProcessor {
 
-    public VoteSummary process(MoMessage moMessage) {
-        System.out.println(moMessage);
-        String text = moMessage.getText().trim();
+    public VoteSummary process(String text) {
 
         VoteSummary.VoteAction action = null;
-        switch (text.toLowerCase()) {
+        switch (text.toLowerCase().trim()) {
             case "u":
             case "up":
                 action = VoteSummary.VoteAction.UP;
@@ -32,6 +29,7 @@ public class MoMessageProcessor {
             default:
                 action = VoteSummary.VoteAction.DISCARD;
         }
+
         return new VoteSummary(action);
     }
 }

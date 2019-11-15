@@ -17,6 +17,6 @@ public class VoteSummary {
     }
 
     public enum VoteAction {
-        UP, DOWN, LEFT, RIGHT
+        UP, DOWN, LEFT, RIGHT, DISCARD
     }
 }

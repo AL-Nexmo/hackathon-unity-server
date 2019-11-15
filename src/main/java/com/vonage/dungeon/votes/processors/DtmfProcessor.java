@@ -1,12 +1,12 @@
 package com.vonage.dungeon.votes.processors;
-import org.springframework.stereotype.Component;
 
 import com.vonage.dungeon.votes.domain.Counters;
 import com.vonage.dungeon.votes.domain.Dtmf;
+import org.springframework.stereotype.Component;
 
 @Component
 public class DtmfProcessor {
-    public void process(Dtmf dtmf){
+    public void process(Dtmf dtmf) {
         switch (dtmf.getDigit()) {
             case "2":
                 Counters.up.incrementAndGet();
